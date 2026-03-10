@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Piccolinas Party | Decoration & Rental — Merced, CA",
   description:
     "Since 2006, Piccolinas Party Decoration & Rental has been Merced's premier event design studio. Luxury weddings, celebrations, piñatas, and custom centerpieces.",
+  icons: {
+    icon: "images/logo3.png"
+  }
   keywords:
     "wedding planner Merced CA, party decoration rental Merced, event decorations, piñatas, custom centerpieces, Piccolinas Party",
   openGraph: {
