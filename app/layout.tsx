@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     description:
       "Merced's most prestigious event design studio since 2006. Weddings, celebrations, piñatas & more.",
     type: "website",
+    images: [
+      {
+        url: "/images/og_logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Piccolinas Party Decoration & Rental",
+      }
+    ],
   },
 };
 
