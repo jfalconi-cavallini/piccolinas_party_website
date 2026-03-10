@@ -1136,7 +1136,7 @@ function Shop() {
     tag: i % 4 === 0 ? "Bestseller" : i % 7 === 0 ? "New" : null,
   }));
 
-  const decorItems = Array.from({ length: 8 }, (_, i) => ({
+  const decorItems = Array.from({ length: 7 }, (_, i) => ({
     id: i + 1,
     src: `/images/decoration${i + 9}.jpg`,
     name: `Custom Centerpiece ${i + 1}`,
