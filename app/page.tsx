@@ -968,7 +968,7 @@ function Services() {
 
 // ─── GALLERY ─────────────────────────────────────────────────────────────────
 function Gallery() {
-  const images = Array.from({ length: 16 }, (_, i) => `/images/decoration${i + 1}.jpg`);
+  const images = Array.from({ length: 15 }, (_, i) => `/images/decoration${i + 1}.jpg`);
   const [active, setActive] = useState<string | null>(null);
 
   return (
