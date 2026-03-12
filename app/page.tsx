@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import emailjs from "@emailjs/browser";
 
 // ─── NAV ────────────────────────────────────────────────────────────────────
 function Nav() {
@@ -1527,9 +1528,26 @@ function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.MouseEvent) => {
+  const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
-    setSent(true);
+    try {
+      await emailjs.send(
+        "service_06jkroi",
+        "template_3fioo6o",
+        {
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          eventType: form.eventType,
+          date: form.date,
+          message: form.message,
+        },
+        "YOUR_PUBLIC_KEY"
+      );
+      setSent(true);
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   return (
