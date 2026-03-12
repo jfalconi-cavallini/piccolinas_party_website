@@ -1542,7 +1542,7 @@ function Contact() {
           date: form.date,
           message: form.message,
         },
-        "YOUR_PUBLIC_KEY"
+        "rxwVzihhHWK9JLH-l"
       );
       setSent(true);
     } catch (error) {
