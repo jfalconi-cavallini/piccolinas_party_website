@@ -97,7 +97,7 @@ export default function AdminSidebar() {
 
       {/* Overlay (mobile only) */}
       {open && (
-        <div className="admin-overlay" onClick={close} style={{ display: "block" }} />
+        <div className="admin-overlay" onClick={close} />
       )}
 
       {/* Sidebar */}
@@ -107,7 +107,6 @@ export default function AdminSidebar() {
           background: "#18181b",
           width: 220,
           minHeight: "100vh",
-          display: "flex",
           flexDirection: "column",
           flexShrink: 0,
         }}
