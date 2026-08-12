@@ -198,7 +198,7 @@ export default function GalleryManager({ initialData }: { initialData: GalleryIm
       onDrop={(e) => { e.preventDefault(); setDragOver(false); e.dataTransfer.files && handleUpload(e.dataTransfer.files); }}
     >
       {/* Header */}
-      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 32 }}>
+      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 32, gap: 16, flexWrap: "wrap" }}>
         <div>
           <h1 style={{ fontSize: 24, fontWeight: 700, color: "#18181b", margin: "0 0 6px", letterSpacing: "-0.4px" }}>
             Gallery

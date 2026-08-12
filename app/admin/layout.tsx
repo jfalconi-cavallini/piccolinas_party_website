@@ -7,46 +7,42 @@ export default async function AdminLayout({ children }: { children: React.ReactN
 
   if (!user) {
     return (
-      <div style={{
-        /* Reset global site styles for the login page */
-        fontFamily: "system-ui, -apple-system, sans-serif",
-        background: "#f4f4f5",
-        minHeight: "100vh",
-        color: "#18181b",
-      }}>
+      <div style={{ fontFamily: "system-ui, -apple-system, sans-serif", background: "#f4f4f5", minHeight: "100vh", color: "#18181b" }}>
         {children}
       </div>
     );
   }
 
   return (
-    <div style={{
-      /* Reset global site styles (body is #0a0a0a, nav is position:fixed, etc.) */
-      fontFamily: "system-ui, -apple-system, sans-serif",
-      background: "#f4f4f5",
-      color: "#18181b",
-      minHeight: "100vh",
-      display: "flex",
-    }}>
+    <div style={{ fontFamily: "system-ui, -apple-system, sans-serif", background: "#f4f4f5", color: "#18181b", minHeight: "100vh" }}>
+      <style>{`
+        /* Reset globals bleeding in */
+        .admin-root h1, .admin-root h2, .admin-root h3 {
+          font-family: system-ui, -apple-system, sans-serif;
+          font-weight: 700;
+          line-height: 1.2;
+        }
+
+        /* Desktop: sidebar visible, main indented */
+        .admin-sidebar  { display: flex; }
+        .admin-mobile-bar { display: none; }
+        .admin-main { margin-left: 220px; padding: 36px 40px; }
+
+        /* Mobile: sidebar hidden, top bar shown */
+        @media (max-width: 767px) {
+          .admin-sidebar { display: none; position: fixed; inset: 0; z-index: 200; width: 260px; right: auto; }
+          .admin-sidebar.sidebar-open { display: flex; }
+          .admin-overlay { display: block !important; }
+          .admin-mobile-bar { display: flex; }
+          .admin-main { margin-left: 0; padding: 72px 16px 32px; }
+        }
+
+        .admin-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 199; }
+      `}</style>
+
       <AdminSidebar />
-      <main style={{
-        flex: 1,
-        minHeight: "100vh",
-        padding: "36px 40px",
-        /* Clamp width so content doesn't stretch on very wide screens */
-        maxWidth: "calc(100vw - 220px)",
-        boxSizing: "border-box",
-      }}>
-        {/* Override h1/h2/h3 that globals.css sets to Cormorant Garamond */}
-        <style>{`
-          .admin-root h1,
-          .admin-root h2,
-          .admin-root h3 {
-            font-family: system-ui, -apple-system, sans-serif;
-            font-weight: 700;
-            line-height: 1.2;
-          }
-        `}</style>
+
+      <main className="admin-main" style={{ minHeight: "100vh", boxSizing: "border-box" }}>
         <div className="admin-root">
           {children}
         </div>

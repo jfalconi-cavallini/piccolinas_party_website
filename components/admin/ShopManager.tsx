@@ -58,7 +58,7 @@ export default function ShopManager({ initialData }: { initialData: ShopItem[] }
     <div>
       <AdminPageHeader title="Shop" subtitle={`${items.filter((i) => i.active).length} active items`} action={<button onClick={openNew} style={btnStyle}>+ Add Item</button>} />
 
-      <div style={{ display: "flex", gap: 0, marginBottom: 24, borderBottom: "1px solid #e4e4e7" }}>
+      <div style={{ display: "flex", gap: 0, marginBottom: 24, borderBottom: "1px solid #e4e4e7", overflowX: "auto" }}>
         {CATEGORIES.map((cat) => {
           const count  = items.filter((i) => i.category === cat.value).length;
           const active = activeTab === cat.value;
@@ -79,7 +79,7 @@ export default function ShopManager({ initialData }: { initialData: ShopItem[] }
       {showForm && (
         <div style={formCard}>
           <h3 style={formTitle}>{isNew ? "New Item" : `Edit: ${editing?.name}`}</h3>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 16, marginBottom: 16 }}>
             <Field label="Item Name" value={form.name} onChange={(v) => setForm({ ...form, name: v })} />
             <Field label="Badge (optional)" value={form.badge ?? ""} onChange={(v) => setForm({ ...form, badge: v || null })} />
           </div>

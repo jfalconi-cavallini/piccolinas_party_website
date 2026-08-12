@@ -64,7 +64,7 @@ export default async function AdminDashboard() {
       {/* Cards grid */}
       <div style={{
         display: "grid",
-        gridTemplateColumns: "repeat(2, 1fr)",
+        gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
         gap: 16,
         maxWidth: 720,
       }}>

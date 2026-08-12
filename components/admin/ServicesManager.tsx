@@ -56,7 +56,7 @@ export default function ServicesManager({ initialData }: { initialData: Service[
       {showForm && (
         <div style={formCard}>
           <h3 style={formTitle}>{isNew ? "New Service" : `Edit: ${editing?.title}`}</h3>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 16, marginBottom: 16 }}>
             <Field label="Title" value={form.title} onChange={(v) => setForm({ ...form, title: v })} />
             <Field label="Subtitle" value={form.subtitle} onChange={(v) => setForm({ ...form, subtitle: v })} />
           </div>
