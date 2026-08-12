@@ -48,12 +48,12 @@ export default function Nav() {
           transition: "height 0.4s ease",
         }}
       >
-        <a href="#hero" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+        <a href="#hero" style={{ textDecoration: "none", display: "flex", alignItems: "center", marginLeft: -116, marginTop: 16 }}>
           <Image
             src="/images/logo3.png"
             alt="Piccolinas Party"
-            width={220}
-            height={85}
+            width={420}
+            height={163}
             style={{ objectFit: "contain" }}
           />
         </a>
