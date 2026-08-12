@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Piccolinas Party | Decoration & Rental — Merced, CA",
   description:
-    "Since 2006, Piccolinas Party Decoration & Rental has been Merced's premier event design studio. Luxury weddings, celebrations, piñatas, and custom centerpieces.",
+    "Since 2005, Piccolinas Party Decoration & Rental has been Merced's premier event design studio. Luxury weddings, celebrations, piñatas, and custom centerpieces.",
   icons: {
     icon: "images/logo3.png"
   },
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Piccolinas Party | Decoration & Rental",
     description:
-      "Merced's most prestigious event design studio since 2006. Weddings, celebrations, piñatas & more.",
+      "Merced's most prestigious event design studio since 2005. Weddings, celebrations, piñatas & more.",
     type: "website",
     images: [
       {

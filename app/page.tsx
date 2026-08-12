@@ -18,6 +18,7 @@ function Nav() {
   const links = [
     { label: "Story", href: "#story" },
     { label: "Services", href: "#services" },
+    { label: "Rentals", href: "#rentals" },
     { label: "Gallery", href: "#gallery" },
     { label: "Shop", href: "#shop" },
     { label: "Contact", href: "#contact" },
@@ -294,7 +295,7 @@ function Hero() {
             transition: "all 0.8s ease 0.2s",
           }}
         >
-          Est. 2006 · Merced, California
+          Est. 2005 · Merced, California
         </span>
 
         <h1
@@ -362,7 +363,7 @@ function Hero() {
           }}
         >
           Merced's most distinguished event design studio. Weddings, celebrations,
-          and unforgettable moments — crafted with passion since 2006.
+          and unforgettable moments — crafted with passion since 2005.
         </p>
 
         <div
@@ -605,7 +606,7 @@ function Story() {
                 lineHeight: 1,
               }}
             >
-              18+
+              20+
             </div>
             <div
               style={{
@@ -639,7 +640,7 @@ function Story() {
               marginBottom: 32,
             }}
           >
-            Since 2006
+            Since 2005
           </h2>
 
           <div
@@ -663,7 +664,7 @@ function Story() {
           >
             Piccolinas Party Decoration & Rental was born from a deep love of celebration
             and a relentless pursuit of beauty. Founded in Merced, California, we have
-            spent nearly two decades transforming ordinary spaces into breathtaking
+            spent over two decades transforming ordinary spaces into breathtaking
             experiences.
           </p>
 
@@ -693,7 +694,7 @@ function Story() {
           >
             {[
               { num: "500+", label: "Events Designed" },
-              { num: "18+", label: "Years Experience" },
+              { num: "20+", label: "Years Experience" },
               { num: "100%", label: "Deadline Record" },
               { num: "∞", label: "Memories Made" },
             ].map((stat) => (
@@ -746,27 +747,43 @@ function Services() {
   const services = [
     {
       icon: "💍",
-      title: "Wedding Design",
+      title: "Weddings",
       subtitle: "Full-Service Luxury",
       description:
         "From the first concept to the final farewell, we orchestrate every floral, lighting, and décor detail. Your love story deserves a stage worthy of its beauty.",
       image: "/images/decoration4.jpg",
     },
     {
-      icon: "🌸",
-      title: "Event Decoration",
+      icon: "👑",
+      title: "Quinceañeras",
       subtitle: "Bespoke Styling",
       description:
-        "Quinceañeras, birthdays, baby showers, corporate galas — we transform any venue into a curated world that reflects your personality and vision.",
+        "A milestone celebration deserves a court worthy of its honoree — custom décor, staging, and styling that make the day unforgettable.",
       image: "/images/decoration5.jpg",
     },
     {
-      icon: "🏛️",
-      title: "Rental Services",
-      subtitle: "Premium Inventory",
+      icon: "🎂",
+      title: "Birthday Parties",
+      subtitle: "Celebrations of Joy",
       description:
-        "Access our curated collection of arches, charger plates, centerpiece vessels, draping, and furniture. Everything you need, delivered and set up.",
-      image: "/images/decoration6.jpg",
+        "From first birthdays to milestone ages, we design themed décor and setups that turn any birthday into a beautifully unforgettable celebration.",
+      image: "/images/decoration10.jpg",
+    },
+    {
+      icon: "🎓",
+      title: "Graduations",
+      subtitle: "Milestone Moments",
+      description:
+        "Celebrate every achievement with décor that honors the hard work — custom colors, banners, and styling for grad parties big or small.",
+      image: "/images/decoration11.jpg",
+    },
+    {
+      icon: "✨",
+      title: "Other Special Events",
+      subtitle: "Any Occasion",
+      description:
+        "Baby showers, corporate galas, university functions, school events — we transform any venue into a curated world built around your vision.",
+      image: "/images/decoration12.jpg",
     },
     {
       icon: "🎨",
@@ -778,7 +795,7 @@ function Services() {
     },
     {
       icon: "✂️",
-      title: "Foam Cutouts",
+      title: "Custom Foam Cutouts & Designs",
       subtitle: "Personalized Décor",
       description:
         "Custom foam cutout figures and letters — perfect for photo backdrops, entrance statements, and personalized party accents that wow your guests.",
@@ -786,10 +803,10 @@ function Services() {
     },
     {
       icon: "🎉",
-      title: "Piñatas",
-      subtitle: "Handcrafted Fun",
+      title: "Custom Piñatas",
+      subtitle: "Any Size & Design",
       description:
-        "A beloved tradition brought to life with handcrafted artisan piñatas in any theme, character, or color — the unforgettable centerpiece of any fiesta.",
+        "A beloved tradition brought to life with handcrafted artisan piñatas in any theme, character, size, or color — the unforgettable centerpiece of any fiesta.",
       image: "/images/pinata1.jpg",
     },
   ];
@@ -857,7 +874,7 @@ function Services() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
+            gridTemplateColumns: "repeat(4, 1fr)",
             gap: 2,
           }}
           className="services-grid"
@@ -868,7 +885,7 @@ function Services() {
               className="gallery-item"
               style={{
                 position: "relative",
-                height: 420,
+                height: 380,
                 cursor: "pointer",
                 overflow: "hidden",
               }}
@@ -956,11 +973,111 @@ function Services() {
       <style>{`
         .gallery-item:hover .service-accent-bar { transform: scaleX(1) !important; }
         .gallery-item:hover img { transform: scale(1.08); }
-        @media (max-width: 1024px) {
+        @media (max-width: 1200px) {
+          .services-grid { grid-template-columns: repeat(3, 1fr) !important; }
+        }
+        @media (max-width: 900px) {
           .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
-        @media (max-width: 600px) {
+        @media (max-width: 500px) {
           .services-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
+    </section>
+  );
+}
+
+// ─── RENTALS ─────────────────────────────────────────────────────────────────
+function Rentals() {
+  const items = [
+    { icon: "🍽️", title: "Tables" },
+    { icon: "🪑", title: "Chairs" },
+    { icon: "🧊", title: "Coolers" },
+    { icon: "🔥", title: "Heaters" },
+    { icon: "⛺", title: "Tents & Canopies" },
+  ];
+
+  return (
+    <section
+      id="rentals"
+      style={{ padding: "120px 40px", background: "#F5EDD8" }}
+    >
+      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+        <div style={{ textAlign: "center", marginBottom: 72 }}>
+          <span className="section-eyebrow">Rental Services</span>
+          <h2 className="section-title" style={{ marginBottom: 16 }}>
+            Everything You Need,{" "}
+            <em style={{ color: "#C9A84C" }}>Delivered</em>
+          </h2>
+          <p className="section-subtitle">
+            From intimate gatherings to large-scale celebrations, our rental
+            inventory covers every essential — delivered, set up, and ready
+            to go.
+          </p>
+        </div>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(5, 1fr)",
+            gap: 24,
+          }}
+          className="rentals-grid"
+        >
+          {items.map((item) => (
+            <div
+              key={item.title}
+              style={{
+                background: "white",
+                padding: "40px 20px",
+                textAlign: "center",
+                transition: "all 0.4s ease",
+              }}
+              className="rental-card"
+            >
+              <div
+                style={{
+                  width: 64,
+                  height: 64,
+                  border: "1px solid rgba(201,168,76,0.4)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: 26,
+                  margin: "0 auto 20px",
+                }}
+              >
+                {item.icon}
+              </div>
+              <div
+                style={{
+                  fontFamily: "'Cinzel', serif",
+                  fontSize: 11,
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  color: "#1A1A1A",
+                }}
+              >
+                {item.title}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ textAlign: "center", marginTop: 60 }}>
+          <a href="#contact" className="btn-primary">
+            <span>Reserve Your Rentals</span>
+          </a>
+        </div>
+      </div>
+
+      <style>{`
+        .rental-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(201,168,76,0.15); }
+        @media (max-width: 1024px) {
+          .rentals-grid { grid-template-columns: repeat(3, 1fr) !important; }
+        }
+        @media (max-width: 600px) {
+          .rentals-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
       `}</style>
     </section>
@@ -1127,13 +1244,14 @@ function Gallery() {
 
 // ─── SHOP (PINATAS + PRODUCTS) ────────────────────────────────────────────────
 function Shop() {
-  const [activeTab, setActiveTab] = useState<"pinatas" | "decorations">("pinatas");
+  const [activeTab, setActiveTab] = useState<
+    "decorations" | "foamcutouts" | "pinatas"
+  >("decorations");
 
   const pinatas = Array.from({ length: 13 }, (_, i) => ({
     id: i + 1,
     src: `/images/pinata${i + 1}.jpg`,
-    name: `Artisan Piñata ${i + 1}`,
-    price: `$${25 + (i % 5) * 10}`,
+    name: `Custom Piñata ${i + 1}`,
     tag: i % 4 === 0 ? "Bestseller" : i % 7 === 0 ? "New" : null,
   }));
 
@@ -1141,11 +1259,22 @@ function Shop() {
     id: i + 1,
     src: `/images/decoration${i + 9}.jpg`,
     name: `Custom Centerpiece ${i + 1}`,
-    price: `$${60 + (i % 5) * 15}`,
     tag: i % 3 === 0 ? "Custom" : null,
   }));
 
-  const items = activeTab === "pinatas" ? pinatas : decorItems;
+  const foamCutoutItems = Array.from({ length: 6 }, (_, i) => ({
+    id: i + 1,
+    src: `/images/decoration${(i % 15) + 1}.jpg`,
+    name: `Custom Foam Cutout ${i + 1}`,
+    tag: i % 3 === 0 ? "Popular" : null,
+  }));
+
+  const items =
+    activeTab === "pinatas"
+      ? pinatas
+      : activeTab === "foamcutouts"
+        ? foamCutoutItems
+        : decorItems;
 
   return (
     <section
@@ -1160,8 +1289,8 @@ function Shop() {
             <em style={{ color: "#C9A84C" }}>Collection</em>
           </h2>
           <p className="section-subtitle">
-            Browse our curated selection of handcrafted piñatas, custom
-            centerpieces, and party essentials — available for pickup in Merced.
+            Browse our curated selection of custom centerpieces, personalized
+            foam cutouts, and handcrafted piñatas — available for pickup in Merced.
           </p>
         </div>
 
@@ -1177,7 +1306,7 @@ function Shop() {
             margin: "0 auto 60px",
           }}
         >
-          {(["pinatas", "decorations"] as const).map((tab) => (
+          {(["decorations", "foamcutouts", "pinatas"] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -1186,7 +1315,7 @@ function Shop() {
                 fontSize: 11,
                 letterSpacing: "3px",
                 textTransform: "uppercase",
-                padding: "14px 40px",
+                padding: "14px 32px",
                 background: activeTab === tab ? "#C9A84C" : "transparent",
                 color: activeTab === tab ? "#1A1A1A" : "#8B7355",
                 border: "none",
@@ -1194,7 +1323,11 @@ function Shop() {
                 transition: "all 0.3s ease",
               }}
             >
-              {tab === "pinatas" ? "Piñatas" : "Centerpieces"}
+              {tab === "pinatas"
+                ? "Piñatas"
+                : tab === "foamcutouts"
+                  ? "Foam Cutouts"
+                  : "Centerpieces"}
             </button>
           ))}
         </div>
@@ -1265,19 +1398,9 @@ function Shop() {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "space-between",
+                    justifyContent: "flex-end",
                   }}
                 >
-                  <span
-                    style={{
-                      fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: "1.4rem",
-                      fontWeight: 500,
-                      color: "#C9A84C",
-                    }}
-                  >
-                    {item.price}
-                  </span>
                   <a
                     href="#contact"
                     style={{
@@ -1620,7 +1743,7 @@ function Contact() {
               },
               {
                 label: "Est.",
-                value: "Since 2006 — 18+ Years of Excellence",
+                value: "Since 2005 — 20+ Years of Excellence",
                 icon: "✦",
               },
               {
@@ -1994,7 +2117,7 @@ function Footer() {
                 maxWidth: 280,
               }}
             >
-              Merced's premier event design studio since 2006. Crafting
+              Merced's premier event design studio since 2005. Crafting
               unforgettable celebrations with artistry, elegance, and love.
             </p>
           </div>
@@ -2013,7 +2136,7 @@ function Footer() {
             >
               Quick Links
             </h4>
-            {["Our Story", "Services", "Gallery", "Shop", "Contact"].map(
+            {["Our Story", "Services", "Rentals", "Gallery", "Shop", "Contact"].map(
               (link) => (
                 <a
                   key={link}
@@ -2166,7 +2289,7 @@ function Footer() {
               color: "rgba(201,168,76,0.4)",
             }}
           >
-            Est. 2006 · Merced, CA
+            Est. 2005 · Merced, CA
           </span>
         </div>
       </div>
@@ -2192,6 +2315,7 @@ export default function Home() {
       <Marquee />
       <Story />
       <Services />
+      <Rentals />
       <Gallery />
       <Shop />
       <Testimonials />
