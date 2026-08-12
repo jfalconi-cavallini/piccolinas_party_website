@@ -4,11 +4,19 @@ import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { useReveal } from "@/hooks/useReveal";
 
-const images = Array.from({ length: 15 }, (_, i) => `/images/decoration${i + 1}.jpg`);
+const localImages = Array.from({ length: 15 }, (_, i) => ({
+  src: `/images/decoration${i + 1}.jpg`,
+  alt: `Decoration ${i + 1}`,
+}));
 
-export default function Gallery() {
+interface Props {
+  supabaseImages?: { src: string; alt: string }[];
+}
+
+export default function Gallery({ supabaseImages }: Props) {
   const revealRef = useReveal<HTMLDivElement>();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const images = supabaseImages && supabaseImages.length > 0 ? supabaseImages : localImages;
 
   const close = useCallback(() => setActiveIndex(null), []);
   const prev = useCallback(() => {
@@ -59,12 +67,12 @@ export default function Gallery() {
           }}
           className="gallery-grid"
         >
-          {images.map((src, i) => {
+          {images.map((img, i) => {
             const isWide = i === 0 || i === 5 || i === 10;
             const isTall = i === 3 || i === 8;
             return (
               <div
-                key={src}
+                key={img.src}
                 className="gallery-item"
                 onClick={() => setActiveIndex(i)}
                 style={{
@@ -76,8 +84,8 @@ export default function Gallery() {
                 }}
               >
                 <Image
-                  src={src}
-                  alt={`Decoration ${i + 1}`}
+                  src={img.src}
+                  alt={img.alt}
                   fill
                   style={{ objectFit: "cover", transition: "transform 0.7s ease" }}
                 />
@@ -213,8 +221,8 @@ export default function Gallery() {
             onClick={(e) => e.stopPropagation()}
           >
             <Image
-              src={images[activeIndex]}
-              alt="Gallery"
+              src={images[activeIndex].src}
+              alt={images[activeIndex].alt}
               fill
               style={{ objectFit: "contain" }}
             />
