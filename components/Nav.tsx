@@ -48,7 +48,7 @@ export default function Nav() {
           transition: "height 0.4s ease",
         }}
       >
-        <a href="#hero" style={{ textDecoration: "none", display: "flex", alignItems: "center", marginLeft: -116, marginTop: 16 }}>
+        <a href="#hero" className="nav-logo" style={{ textDecoration: "none", display: "flex", alignItems: "center", marginLeft: -116, marginTop: 16 }}>
           <Image
             src="/images/logo3.png"
             alt="Piccolinas Party"
@@ -178,6 +178,9 @@ export default function Nav() {
         @media (max-width: 900px) {
           .desktop-nav { display: none !important; }
           .hamburger { display: flex !important; }
+        }
+        @media (max-width: 768px) {
+          .nav-logo { display: none !important; }
         }
       `}</style>
     </nav>
