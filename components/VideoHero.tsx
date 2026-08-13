@@ -195,7 +195,7 @@ export default function VideoHero() {
               alt="Piccolinas Party"
               width={420}
               height={163}
-              style={{ width: "100%", maxWidth: 260, height: "auto", objectFit: "contain" }}
+              style={{ width: "100%", maxWidth: 400, height: "auto", objectFit: "contain" }}
               priority
             />
           </div>
