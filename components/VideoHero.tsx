@@ -158,6 +158,7 @@ export default function VideoHero() {
           justifyContent: "center",
           overflow: "hidden",
           background: "#0a0a0a",
+          paddingBottom: "80px",
         }}
       >
         <div
