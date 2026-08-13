@@ -25,6 +25,7 @@
 */
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 const SCROLL_HEIGHT_VH = 600;
 
@@ -188,6 +189,16 @@ export default function VideoHero() {
             transition: "opacity 1s ease 0.3s, transform 1s ease 0.3s",
           }}
         >
+          <div style={{ display: "flex", justifyContent: "center", marginBottom: 20 }}>
+            <Image
+              src="/images/logo3.png"
+              alt="Piccolinas Party"
+              width={420}
+              height={163}
+              style={{ width: "100%", maxWidth: 260, height: "auto", objectFit: "contain" }}
+              priority
+            />
+          </div>
           <span style={{ fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: "6px", textTransform: "uppercase", color: "#C9A84C", display: "block", marginBottom: 28 }}>
             Est. 2005 · Merced, California
           </span>
